@@ -15,31 +15,31 @@
             android:id="@+id/shopName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:text="Shop Name"/>
+            android:text="Shop Name"
+            android:textColor="#000000" />
 
         <TextView
-
-            android:id="@+id/itemPrice"
+            android:id="@+id/sellerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/shopName"
+            android:text="Seller Name"
             android:textColor="#008000" />
 
         <TextView
-
-            android:id="@+id/totalQuantity"
+            android:id="@+id/sellerAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_below="@id/itemPrice" />
+            android:layout_below="@id/sellerName"
+            android:text="Seller Address" />
 
         <TextView
-            android:id="@+id/totalPrice"
+            android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/itemPrice"
+            android:layout_alignTop="@+id/sellerName"
             android:layout_alignParentEnd="true"
+            android:text="1234567890"
             android:textColor="#de4500" />
     </RelativeLayout>
 
