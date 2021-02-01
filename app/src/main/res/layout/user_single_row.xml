@@ -16,10 +16,10 @@
             android:background="#fff">
 
             <TextView
-                android:id="@+id/txtStaffNumber"
+                android:id="@+id/txtUserNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/StaffName"
+                android:layout_below="@+id/UserName"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@id/rlstaff"
@@ -28,20 +28,20 @@
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/txtStaffAccess"
+                android:id="@+id/txtStaffAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtStaffNumber"
+                android:layout_below="@id/txtUserNumber"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@id/rlstaff"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Access :"
+                android:text="Address :"
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
 
-                android:id="@+id/StaffName"
+                android:id="@+id/UserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -56,10 +56,10 @@
                 android:id="@+id/StaffNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/StaffName"
+                android:layout_below="@+id/UserName"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_toEndOf="@id/txtStaffNumber"
+                android:layout_toEndOf="@id/txtUserNumber"
                 android:fontFamily="@font/montserrat_medium"
                 android:text="9876543210"
                 android:textColor="#000"
@@ -69,12 +69,12 @@
                 android:id="@+id/StaffAccess"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtStaffNumber"
+                android:layout_below="@id/txtUserNumber"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:layout_toEndOf="@id/txtStaffAccess"
+                android:layout_toEndOf="@id/txtStaffAddress"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="Full access"
+                android:text="Gorakhpur"
                 android:textColor="#3498db"
                 android:textSize="@dimen/_10ssp" />
 
