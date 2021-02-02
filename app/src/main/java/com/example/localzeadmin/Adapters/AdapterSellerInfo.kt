@@ -1,6 +1,7 @@
 package com.example.localzeadmin.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalSellerInfo
 import com.example.localzeadmin.R
+import com.example.localzeadmin.UserDetailsActivity
 
 class AdapterSellerInfo(val context: Context, private val sellerDetails: List<ModalSellerInfo>) :
     RecyclerView.Adapter<AdapterSellerInfo.HolderSellerInfo>() {
@@ -33,11 +35,12 @@ class AdapterSellerInfo(val context: Context, private val sellerDetails: List<Mo
         val seller_details = sellerDetails[position]
         holder.shopName.text = seller_details.shopName
         holder.sellerName.text = seller_details.sellerName
-        holder.phone.text = seller_details.phoneNumber
-        holder.address.text = "MobNo.${seller_details.shopAddress}"
+        holder.phone.text = "MobNo.${seller_details.phoneNumber}"
+        holder.address.text = seller_details.shopAddress
         holder.itemView.setOnClickListener {
-
-
+            val intent = Intent(context, UserDetailsActivity::class.java)
+            intent.putExtra("shopId", seller_details.shopId)
+            context.startActivity(intent)
         }
     }
 }
