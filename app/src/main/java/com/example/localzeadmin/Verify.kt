@@ -111,7 +111,7 @@ class Verify : AppCompatActivity() {
 
                     val userMap = HashMap<String, Any>()
                     val phone = intent.getStringExtra("phone")
-                    val intent = Intent(this, UserInfo::class.java)
+                    val intent = Intent(this, ContinueIn::class.java)
                     intent.putExtra("phone1", phone)
                     userMap["uid"] = uid
                     userMap["phone"] = phone.toString()

@@ -1,4 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ShopName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Name :"
+                android:textSize="@dimen/_10ssp" />
+            <TextView
+                android:id="@+id/txtUserNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Mobile No. :"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/txtStaffAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtUserNumber"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Address :"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+
+                android:id="@+id/ShopName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Katappa Mama"
+                android:textColor="#de4500"
+                android:textSize="@dimen/_12ssp" />
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ShopName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/txtName"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Shaquib"
+                android:textColor="#000"
+                android:textSize="@dimen/_10ssp" />
+            <TextView
+                android:id="@+id/Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/txtUserNumber"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="9876543210"
+                android:textColor="#000"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/City"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtUserNumber"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/txtStaffAddress"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Gorakhpur"
+                android:textColor="#3498db"
+                android:textSize="@dimen/_10ssp" />
+
+            <RelativeLayout
+                android:id="@+id/rlstaff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/stroke_primary">
+
+                <ImageView
+                    android:id="@+id/imgStaff"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_margin="1dp"
+
+                    android:src="@drawable/staff_single" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -44,4 +172,4 @@
     </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
+</androidx.cardview.widget.CardView>-->
