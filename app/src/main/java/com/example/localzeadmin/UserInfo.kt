@@ -29,10 +29,10 @@ class UserInfo : AppCompatActivity() {
                 (userArrayList as ArrayList<ModalUserInfo>).clear()
                 for (i in snapshot.children){
                     val obj=ModalUserInfo(
-                        i.child("phone").value.toString(),
                         i.child("name").value.toString(),
-                        i.child("uid").value.toString(),
-                        i.child("current_address").child("city").value.toString()
+                        i.child("phone").value.toString(),
+                        i.child("current_address").child("city").value.toString(),
+                        i.child("uid").value.toString()
 
                     )
                     (userArrayList as ArrayList<ModalUserInfo>).add(obj)

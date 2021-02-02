@@ -13,8 +13,8 @@ class AdapterUserInfo(val context: Context,val userList:List<ModalUserInfo>):
     RecyclerView.Adapter<AdapterUserInfo.HolderUserInfo>() {
     class HolderUserInfo(view: View) : RecyclerView.ViewHolder(view) {
         val userName: TextView = view.findViewById(R.id.UserName)
-        val phone: TextView = view.findViewById(R.id.txtUserNumber)
-        val address: TextView = view.findViewById(R.id.txtStaffAddress)
+        val phone: TextView = view.findViewById(R.id.StaffNumber)
+        val address: TextView = view.findViewById(R.id.StaffAccess)
 
     }
     override fun onCreateViewHolder(
