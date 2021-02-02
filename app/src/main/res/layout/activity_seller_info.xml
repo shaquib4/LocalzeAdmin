@@ -6,10 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".SellerInfoActivity">
 
+    <EditText
+        android:id="@+id/searchPhone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@drawable/bg_product_shop"
+        android:hint="Search"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingStart="@dimen/_20sdp"
+        tools:ignore="RtlSymmetry" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_seller_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/searchPhone"
         tools:listitem="@layout/row_seller_info" />
 
 </RelativeLayout>
