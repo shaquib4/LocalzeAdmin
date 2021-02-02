@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Adapters.AdapterCartCustomerOrder
@@ -44,19 +45,19 @@ class CustomerOrder : AppCompatActivity() {
         listRel=findViewById(R.id.rl_listCurrent)
         recyclerNo=findViewById(R.id.rl_Current_orders)
         recyclerCustomer=findViewById(R.id.recyclerCurrentOrders)
+
+        cart=ArrayList<ModalOrderCart>()
+        list=ArrayList<ModalOrderList>()
+        recyclerCustomer.layoutManager=LinearLayoutManager(this)
+        currentOrderHistoryDatabase =
+            FirebaseDatabase.getInstance().reference.child("users").child(uid).child("MyOrders")
+        listRef=FirebaseDatabase.getInstance().reference.child("users").child(uid).child("MyOrderList")
         cartRel.setOnClickListener {
             cartOrders()
         }
         listRel.setOnClickListener {
             listOrder()
         }
-        cart=ArrayList<ModalOrderCart>()
-        list=ArrayList<ModalOrderList>()
-        recyclerCustomer.layoutManager=LinearLayoutManager(this)
-        currentOrderHistoryDatabase =
-            FirebaseDatabase.getInstance().reference.child("users").child(uid).child("MyOrders")
-        listRef=FirebaseDatabase.getInstance().reference.child("users").child(uid).child("OrderList")
-
         searchCart.addTextChangedListener(object :TextWatcher{
             override fun afterTextChanged(s: Editable?) {
 
@@ -119,7 +120,7 @@ class CustomerOrder : AppCompatActivity() {
                     )
                     (list as ArrayList<ModalOrderList>).add(obj)
                 }
-                (list as ArrayList<ModalOrderList>).reverse()
+
 
 
                     adapterList =
@@ -166,19 +167,17 @@ class CustomerOrder : AppCompatActivity() {
 
                             (cart as ArrayList<ModalOrderCart>).add(obj)
                     }
-                    (cart as ArrayList<ModalOrderCart>).reverse()
-                    if (cart.isEmpty()) {
-                        recyclerCustomer.visibility = View.GONE
-                    } else {
-                        recyclerNo.visibility = View.GONE
-                        recyclerCustomer.visibility = View.VISIBLE
+
+
+
+
                         adapterOrderUser =
                             AdapterCartCustomerOrder(
                                 this@CustomerOrder,
                                 cart
                             )
                         recyclerCustomer.adapter = adapterOrderUser
-                    }
+
 
                 }
             })
@@ -214,18 +213,15 @@ class CustomerOrder : AppCompatActivity() {
                     (list as ArrayList<ModalOrderList>).add(obj)
                 }
                 (list as ArrayList<ModalOrderList>).reverse()
-                if (list.isEmpty()) {
-                    recyclerCustomer.visibility = View.GONE
-                } else {
-                    recyclerNo.visibility = View.GONE
-                    recyclerCustomer.visibility = View.VISIBLE
+
+
                     adapterList =
                         AdapterListCustomerOrder(
                             this@CustomerOrder,
                             list
                         )
                     recyclerCustomer.adapter = adapterList
-                }
+
             }
         })
     }
