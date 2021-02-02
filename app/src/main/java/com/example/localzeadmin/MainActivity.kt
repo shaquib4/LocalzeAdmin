@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
         if (currentUser != null) {
 
-            startActivity(Intent(this, UserInfo::class.java))
+            startActivity(Intent(this, ContinueIn::class.java))
             finish()
         }
     }
