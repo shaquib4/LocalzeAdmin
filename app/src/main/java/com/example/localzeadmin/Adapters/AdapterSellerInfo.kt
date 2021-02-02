@@ -37,6 +37,7 @@ class AdapterSellerInfo(val context: Context, private val sellerDetails: List<Mo
         holder.address.text = "MobNo.${seller_details.shopAddress}"
         holder.itemView.setOnClickListener {
 
+
         }
     }
 }

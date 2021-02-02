@@ -10,10 +10,6 @@ import com.example.localzeadmin.Modals.ModalSellerInfo
 import com.google.firebase.database.*
 
 class SellerInfoActivity : AppCompatActivity() {
-    private lateinit var shopName: TextView
-    private lateinit var sellerName: TextView
-    private lateinit var phoneNumber: TextView
-    private lateinit var shopAddress: TextView
     private lateinit var databaseReference: DatabaseReference
     private lateinit var recyclerInfoSeller: RecyclerView
     private lateinit var sellerInfoList: List<ModalSellerInfo>
@@ -21,10 +17,6 @@ class SellerInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seller_info)
-        shopName = findViewById(R.id.shopName)
-        sellerName = findViewById(R.id.sellerName)
-        phoneNumber = findViewById(R.id.phoneNumber)
-        shopAddress = findViewById(R.id.sellerAddress)
         recyclerInfoSeller = findViewById(R.id.recycler_seller_info)
         recyclerInfoSeller.layoutManager = LinearLayoutManager(this)
         sellerInfoList = ArrayList<ModalSellerInfo>()
