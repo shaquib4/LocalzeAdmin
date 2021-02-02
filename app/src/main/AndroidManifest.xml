@@ -18,10 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LocalzeAdmin">
-        <activity android:name=".ContinueIn"></activity>
-        <activity android:name=".Verify" />
-        <activity android:name=".UserInfo"></activity>
-        <activity android:name=".SellerInfoActivity" />
+        <activity android:name=".CityActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ContinueIn" />
+        <activity android:name=".Verify" />
+        <activity android:name=".UserInfo" />
+        <activity android:name=".SellerInfoActivity" />
     </application>
 
 </manifest>

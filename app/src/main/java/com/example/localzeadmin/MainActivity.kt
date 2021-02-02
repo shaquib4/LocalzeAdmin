@@ -10,15 +10,15 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
-     private lateinit var btn:Button
-    private lateinit var edt:EditText
+    private lateinit var btn: Button
+    private lateinit var edt: EditText
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         auth= FirebaseAuth.getInstance()
-       btn=findViewById(R.id.btnRegButton)
-        edt=findViewById(R.id.edtmobiles)
+        auth = FirebaseAuth.getInstance()
+        btn = findViewById(R.id.btnRegButton)
+        edt = findViewById(R.id.edtmobiles)
         btn.setOnClickListener {
             register()
         }
