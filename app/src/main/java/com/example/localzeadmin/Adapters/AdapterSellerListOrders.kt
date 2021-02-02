@@ -6,14 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.localzeadmin.Modals.ModalOrderCart
+import com.example.localzeadmin.Modals.ModalOrderList
 import com.example.localzeadmin.R
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AdapterSellerOrders(val context: Context, private var sellerOrder: List<ModalOrderCart>) :
-    RecyclerView.Adapter<AdapterSellerOrders.HolderSellerOrders>() {
-    class HolderSellerOrders(view: View) : RecyclerView.ViewHolder(view) {
+class AdapterSellerListOrders(
+    val context: Context,
+    private var sellerListOrders: List<ModalOrderList>
+) : RecyclerView.Adapter<AdapterSellerListOrders.HolderSellerListOrders>() {
+    class HolderSellerListOrders(view: View) : RecyclerView.ViewHolder(view) {
         val orderId: TextView = view.findViewById(R.id.orderIdTv)
         val totalItems: TextView = view.findViewById(R.id.totalItemsTv)
         val totalAmount: TextView = view.findViewById(R.id.orderAmountTv)
@@ -23,45 +25,46 @@ class AdapterSellerOrders(val context: Context, private var sellerOrder: List<Mo
         val paid: TextView = view.findViewById(R.id.txtCod2)
         val orderStatus: TextView = view.findViewById(R.id.orderStatusTv)
         val orderTime: TextView = view.findViewById(R.id.orderDateTv)
+
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderSellerOrders {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderSellerListOrders {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.single_row_order_seller, parent, false)
-        return HolderSellerOrders(view)
+        return HolderSellerListOrders(view)
 
     }
 
     override fun getItemCount(): Int {
-        return sellerOrder.size
+        return sellerListOrders.size
 
     }
 
-    override fun onBindViewHolder(holder: HolderSellerOrders, position: Int) {
-        val seller_orders = sellerOrder[position]
-        holder.orderId.text = "OD${seller_orders.orderId}"
-        holder.totalItems.text = seller_orders.orderQuantity + " items"
-        holder.totalAmount.text = "Amount:- ₹" + seller_orders.orderCost
-        holder.customerName.text = seller_orders.orderByName
-        holder.customerMobileNumber.text = seller_orders.orderByMobile
-        holder.orderStatus.text = seller_orders.orderStatus
-        val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
-        val date = Date(seller_orders.orderTime.toLong())
-        val formattedDate = sdf.format(date)
-        holder.orderTime.text = formattedDate
-        when (seller_orders.paymentMode) {
+    override fun onBindViewHolder(holder: HolderSellerListOrders, position: Int) {
+        val list_orders = sellerListOrders[position]
+        holder.orderId.text = "OD${list_orders.orderId}"
+        holder.totalItems.text = list_orders.totalItems + " items"
+        holder.totalAmount.text = "Amount:- ₹" + list_orders.orderCost
+        holder.customerName.text = list_orders.orderByName
+        holder.customerMobileNumber.text = list_orders.orderByMobile
+        holder.orderStatus.text = list_orders.orderStatus
+        when (list_orders.paymentMode) {
+            "" -> {
+                holder.paid.visibility = View.GONE
+                holder.cod.visibility = View.GONE
+            }
             "Cash on Delivery" -> {
                 holder.paid.visibility = View.GONE
                 holder.cod.visibility = View.VISIBLE
             }
-            "Paytm" -> {
-                holder.paid.visibility = View.GONE
-                holder.cod.visibility = View.VISIBLE
-            }
             else -> {
-                holder.paid.visibility = View.GONE
                 holder.cod.visibility = View.GONE
+                holder.paid.visibility = View.VISIBLE
             }
         }
+        val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
+        val date = Date(list_orders.orderTime.toLong())
+        val formattedDate = sdf.format(date)
+        holder.orderTime.text = formattedDate
     }
 }
