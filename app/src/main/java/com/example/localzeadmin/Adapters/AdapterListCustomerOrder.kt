@@ -12,6 +12,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -57,9 +58,11 @@ class AdapterListCustomerOrder(val context: Context,val list:List<ModalOrderList
         holder.totalAmount.text = "Amount:- ₹${listDetails.orderCost}"
         holder.orderStatus.text = listDetails.orderStatus
         val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
-        val date = Date(listDetails.orderTime.toLong())
+      try{  val date = Date(listDetails.orderTime.toLong())
         val formattedDate = sdf.format(date)
-        holder.orderTime.text = formattedDate
+        holder.orderTime.text = formattedDate}catch (e:Exception){
+          e.printStackTrace()
+      }
         when (listDetails.paymentMode) {
             "" -> {
                 holder.paid.visibility = View.GONE
