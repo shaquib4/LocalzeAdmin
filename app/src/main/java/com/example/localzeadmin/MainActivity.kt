@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        auth= FirebaseAuth.getInstance()
+         auth= FirebaseAuth.getInstance()
        btn=findViewById(R.id.btnRegButton)
         edt=findViewById(R.id.edtmobiles)
         btn.setOnClickListener {
