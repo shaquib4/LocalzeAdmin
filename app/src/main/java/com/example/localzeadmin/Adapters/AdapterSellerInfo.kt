@@ -12,10 +12,10 @@ import com.example.localzeadmin.R
 class AdapterSellerInfo(val context: Context, private val sellerDetails: List<ModalSellerInfo>) :
     RecyclerView.Adapter<AdapterSellerInfo.HolderSellerInfo>() {
     class HolderSellerInfo(view: View) : RecyclerView.ViewHolder(view) {
-        val shopName: TextView = view.findViewById(R.id.shopName)
-        val sellerName: TextView = view.findViewById(R.id.sellerName)
-        val phone: TextView = view.findViewById(R.id.phoneNumber)
-        val address: TextView = view.findViewById(R.id.sellerAddress)
+        val shopName: TextView = view.findViewById(R.id.ShopName)
+        val sellerName: TextView = view.findViewById(R.id.Name)
+        val phone: TextView = view.findViewById(R.id.Number)
+        val address: TextView = view.findViewById(R.id.City)
 
     }
 
