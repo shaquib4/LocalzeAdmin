@@ -1,11 +1,13 @@
 package com.example.localzeadmin.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.localzeadmin.CustomerOrder
 import com.example.localzeadmin.Modals.ModalUserInfo
 import com.example.localzeadmin.R
 
@@ -35,5 +37,10 @@ class AdapterUserInfo(val context: Context,val userList:List<ModalUserInfo>):
         holder.address.text=userInfo.userLocation
         holder.phone.text=userInfo.userMobile
         holder.userName.text=userInfo.userName
+        holder.itemView.setOnClickListener {
+            val intent= Intent(context,CustomerOrder::class.java)
+             intent.putExtra("uid",userInfo.uid)
+             context.startActivity(intent)
+        }
     }
 }
