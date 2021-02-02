@@ -21,11 +21,26 @@
             android:textColor="#fff"/>
 
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@+id/users"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_product_shop"
+        android:drawableStart="@drawable/ic_search"
+        android:hint="Search"
+        android:maxLines="1"
+        android:paddingStart="@dimen/_5sdp"
+        tools:ignore="RtlSymmetry"
+        android:inputType="text"
+        android:importantForAutofill="no" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_userInfo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_below="@+id/users"/>
+        android:layout_marginTop="@dimen/_9sdp"
+        android:layout_below="@+id/search"/>
 
 </RelativeLayout>
