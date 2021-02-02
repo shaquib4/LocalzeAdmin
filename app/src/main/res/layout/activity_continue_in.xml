@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/continue_as"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_continueAs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp"
+            android:text="Continue In"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/_18ssp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="#fff"
+            android:background="@drawable/border"
+            />
+
+
+
+
+        <Button
+            android:layout_above="@+id/view"
+            android:id="@+id/btnseller"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:elevation="5dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:background="@drawable/proceed_to_add"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Seller"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="@dimen/_14ssp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:id="@+id/view"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/btnCustomer"
+            android:text="Customer"
+            android:layout_below="@id/view"
+            android:textAllCaps="false"
+            android:elevation="5dp"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="#fff"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:background="@drawable/proceed_to_add" />
+
+
+        <ProgressBar
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress_bar2"
+            android:indeterminateDuration="@android:integer/config_longAnimTime"
+            android:id="@+id/progress_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
