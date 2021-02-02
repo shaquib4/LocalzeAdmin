@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fcfcfc"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProduct1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+
+                        android:id="@+id/imgProduct1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/lanju" />
+
+                    <ImageView
+                        android:id="@+id/imgBorder1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/txtMobileOrderedBy"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="@dimen/_10sdp"
+                        android:background="#f1f1f1"
+                        android:contentDescription="@string/todo" />
+
+
+                    <TextView
+                        android:id="@+id/totalItemsTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="5 items"
+                        android:textSize="@dimen/_8ssp" />
+
+                    <TextView
+                        android:id="@+id/orderAmountTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="100dp"
+
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Rs. 499"
+                        android:textColor="#de4500"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        android:id="@+id/txtOrderedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/orderAmountTv"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_toStartOf="@+id/txtCod1"
+                        android:layout_toEndOf="@+id/imgProduct1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="Customer Name"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/txtMobileOrderedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtOrderedBy"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_toStartOf="@+id/txtCod1"
+                        android:layout_toEndOf="@+id/imgProduct1"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="987654321"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/orderIdTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:padding="5dp"
+                        android:text="Oreder Id #35833423"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/_12ssp"
+                        tools:ignore="RelativeOverlap" />
+
+                    <TextView
+
+                        android:id="@+id/txtCod1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderIdTv"
+                        android:layout_alignEnd="@id/orderIdTv"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_add_item"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:padding="5dp"
+                        android:text="COD"
+                        android:textColor="#de4500"
+                        android:textSize="@dimen/_13ssp" />
+
+                    <TextView
+                        android:id="@+id/txtCod2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/orderIdTv"
+                        android:layout_alignEnd="@id/orderIdTv"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/bg_add_item"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:padding="5dp"
+                        android:text="Paid"
+                        android:textColor="#de4500"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/orderDateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imgBorder1"
+                        android:layout_alignEnd="@+id/orderIdTv"
+                        android:layout_marginEnd="10dp"
+                        android:padding="5dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="01/01/2021 3:45 PM"
+                        android:textSize="@dimen/_10ssp" />
+
+                    <TextView
+                        android:id="@+id/orderStatusTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imgBorder1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="5dp"
+                        android:text="Pending"
+                        android:textColor="#08B000"
+                        android:textSize="@dimen/_10ssp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
