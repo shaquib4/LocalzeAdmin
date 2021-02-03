@@ -1,6 +1,7 @@
 package com.example.localzeadmin.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,5 +67,12 @@ class AdapterSellerListOrders(
         val date = Date(list_orders.orderTime.toLong())
         val formattedDate = sdf.format(date)
         holder.orderTime.text = formattedDate
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, sellerListOrders::class.java)
+            intent.putExtra("orderId", list_orders.orderId)
+            intent.putExtra("orderBy", list_orders.orderBy)
+            intent.putExtra("orderTo", list_orders.orderTo)
+            context.startActivity(intent)
+        }
     }
 }
