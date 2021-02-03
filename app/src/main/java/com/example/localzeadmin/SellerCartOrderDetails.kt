@@ -3,10 +3,14 @@ package com.example.localzeadmin
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Adapters.AdapterOrderedItems
-import com.example.localzeadmin.Modals.ModalOrderCart
 import com.example.localzeadmin.Modals.ModelOrderedItems
 import com.google.firebase.database.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class SellerCartOrderDetails : AppCompatActivity() {
     private lateinit var orderId: TextView
@@ -22,7 +26,8 @@ class SellerCartOrderDetails : AppCompatActivity() {
     private var orderTo: String? = "300"
     private lateinit var sellerDatabase: DatabaseReference
     private lateinit var orderedItems: List<ModelOrderedItems>
-    private lateinit var adapterOrderedItems:AdapterOrderedItems
+    private lateinit var adapterOrderedItems: AdapterOrderedItems
+    private lateinit var recyclerOrderedItems: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seller_cart_order_details)
@@ -34,6 +39,8 @@ class SellerCartOrderDetails : AppCompatActivity() {
         totalAmount = findViewById(R.id.txtOrderCost)
         paymentStatus = findViewById(R.id.paymentStatusDetailsSeller)
         deliveryAddress = findViewById(R.id.txtOrderDeliveryAddress)
+        recyclerOrderedItems = findViewById(R.id.recyclerOrderedSellerItem)
+        recyclerOrderedItems.layoutManager = LinearLayoutManager(this)
         orderedItems = ArrayList<ModelOrderedItems>()
         orderID = intent.getStringExtra("orderId")
         orderBy = intent.getStringExtra("orderBy")
@@ -49,18 +56,27 @@ class SellerCartOrderDetails : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val ordersId = snapshot.child("orderId").value.toString()
                 val orderTime = snapshot.child("orderTime").value.toString()
-                val deliveryAddress = snapshot.child("deliveryAddress").value.toString()
+                val deliverysAddress = snapshot.child("deliveryAddress").value.toString()
                 val ordersStatus = snapshot.child("orderStatus").value.toString()
                 val totalItem = snapshot.child("orderQuantity").value.toString()
                 val totalAmounts = snapshot.child("orderCost").value.toString()
                 if (snapshot.child("deliveryFee").exists()) {
                     val deliveryFees = snapshot.child("deliveryFee").value.toString()
+                    deliveryCharge.text = "₹${deliveryFees}"
                 } else {
                     val deliveryFees = "Delivery Fee must be updated Soon"
+                    deliveryCharge.text = deliveryFees
                 }
                 val paymentMode = snapshot.child("paymentMode").value.toString()
-
-
+                orderId.text = "OD${ordersId}"
+                val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
+                val date = Date(orderTime.toLong())
+                val formattedDate = sdf.format(date)
+                orderDate.text = formattedDate
+                deliveryAddress.text = deliverysAddress
+                orderStatus.text = ordersStatus
+                totalItems.text = totalItem
+                totalAmount.text = "₹$totalAmounts"
             }
 
         })
@@ -81,10 +97,9 @@ class SellerCartOrderDetails : AppCompatActivity() {
                     )
                     (orderedItems as ArrayList<ModelOrderedItems>).add(obj)
                 }
-
-
+                adapterOrderedItems = AdapterOrderedItems(this@SellerCartOrderDetails, orderedItems)
+                recyclerOrderedItems.adapter = adapterOrderedItems
             }
-
         })
     }
 }

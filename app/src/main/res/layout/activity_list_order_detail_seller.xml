@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
- >
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rl_ListSeller"
@@ -15,7 +14,6 @@
             android:id="@+id/rl_ListOrderDetails"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/rlAcceptConfirm"
             android:layout_marginBottom="@dimen/_4sdp"
             android:orientation="vertical">
 
@@ -42,8 +40,6 @@
                     android:textColor="#000000"
                     android:textSize="@dimen/_13ssp"
                     tools:ignore="RelativeOverlap" />
-
-
 
 
                 <View
@@ -86,7 +82,6 @@
                             android:text="@string/_123456"
                             android:textColor="#000000"
                             android:textSize="@dimen/_11ssp" />
-
 
 
                     </TableRow>
@@ -401,53 +396,9 @@
                 app:reverseLayout="true"
                 app:stackFromEnd="true"
                 tools:listitem="@layout/list_single_row_seller_order" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rlAcceptConfirm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginHorizontal="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_3sdp"
-            android:weightSum="2">
-
-
-            <!-- <TextView
-                 android:id="@+id/totalListCost"
-                 android:layout_width="0dp"
-                 android:layout_height="@dimen/_32sdp"
-                 android:layout_weight="1"
-                 android:fontFamily="@font/montserrat_bold"
-                 android:text="@string/rs_53"
-
-                 android:textAlignment="center"
-                 android:textSize="22sp" />-->
-            <EditText
-                android:id="@+id/etDeliveryChargeList"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_42sdp"
-                android:layout_weight="1"
-                android:fontFamily="@font/montserrat_medium"
-                android:hint="Enter Delivery Charge "
-                android:inputType="number"
-                android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/acceptConfirm"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_33sdp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_buttons"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="@string/accept_and_confirm"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textSize="@dimen/_12ssp" />
         </LinearLayout>
     </RelativeLayout>
-
+<!--
     <RelativeLayout
         android:id="@+id/rl_retryListOrderDetails"
         android:layout_width="match_parent"
@@ -506,6 +457,6 @@
             android:textSize="@dimen/_15ssp" />
 
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </RelativeLayout>
