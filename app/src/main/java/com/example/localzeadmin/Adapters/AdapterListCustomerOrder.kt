@@ -1,6 +1,7 @@
 package com.example.localzeadmin.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalOrderList
 import com.example.localzeadmin.R
+import com.example.localzeadmin.UserOrderDetails
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -76,6 +78,13 @@ class AdapterListCustomerOrder(val context: Context,val list:List<ModalOrderList
                 holder.cod.visibility = View.GONE
                 holder.paid.visibility = View.VISIBLE
             }
+
+
+        }
+        holder.itemView.setOnClickListener {
+            val intent= Intent(context,UserOrderDetails::class.java)
+            intent.putExtra("uid",listDetails.orderBy)
+            context.startActivity(intent)
         }
     }
 }
