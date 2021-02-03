@@ -11,7 +11,7 @@ import com.example.localzeadmin.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class AdapterUserOrderList(val context: Context, val listDetails: ArrayList<ModelList>) :
+class AdapterUserOrderList(val context: Context, val listDetails: List<ModelList>,val orderId:String,val uid:String) :
     RecyclerView.Adapter<AdapterUserOrderList.HolderOrderList>() {
     class HolderOrderList(view: View) : RecyclerView.ViewHolder(view) {
         val txtNoCustomer: TextView = view.findViewById(R.id.txtNoCustomer)

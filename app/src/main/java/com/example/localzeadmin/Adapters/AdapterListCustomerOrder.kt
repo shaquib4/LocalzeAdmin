@@ -84,6 +84,9 @@ class AdapterListCustomerOrder(val context: Context,val list:List<ModalOrderList
         holder.itemView.setOnClickListener {
             val intent= Intent(context,UserOrderDetails::class.java)
             intent.putExtra("uid",listDetails.orderBy)
+            intent.putExtra("orderId",listDetails.orderId)
+            intent.putExtra("orderTo",listDetails.orderTo)
+            intent.putExtra("totalCost",listDetails.orderCost)
             context.startActivity(intent)
         }
     }
