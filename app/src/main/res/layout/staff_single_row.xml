@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+
+            <TextView
+                android:id="@+id/txtStaffNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/StaffName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Mobile No. :"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/txtStaffAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtStaffNumber"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Access :"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+
+                android:id="@+id/StaffName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/rlstaff"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Katappa Mama"
+                android:textColor="#de4500"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/StaffNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/StaffName"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/txtStaffNumber"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="9876543210"
+                android:textColor="#000"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:id="@+id/StaffAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtStaffNumber"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/txtStaffAccess"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Full access"
+                android:textColor="#3498db"
+                android:textSize="@dimen/_10ssp" />
+
+            <RelativeLayout
+                android:id="@+id/rlstaff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/stroke_primary">
+
+                <ImageView
+                    android:id="@+id/imgStaff"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/staff_single" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnStatus"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:background="@drawable/active" />
+
+            <ImageView
+                android:id="@+id/imgMakeCallStaff"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_baseline_phone_24" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

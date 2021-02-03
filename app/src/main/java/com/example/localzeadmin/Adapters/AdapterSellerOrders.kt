@@ -1,6 +1,7 @@
 package com.example.localzeadmin.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalOrderCart
 import com.example.localzeadmin.R
+import com.example.localzeadmin.SellerCartOrderDetails
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -62,6 +64,13 @@ class AdapterSellerOrders(val context: Context, private var sellerOrder: List<Mo
                 holder.paid.visibility = View.GONE
                 holder.cod.visibility = View.GONE
             }
+        }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, SellerCartOrderDetails::class.java)
+            intent.putExtra("orderId", seller_orders.orderId)
+            intent.putExtra("orderBy", seller_orders.orderBy)
+            intent.putExtra("orderTo", seller_orders.orderTo)
+            context.startActivity(intent)
         }
     }
 }
