@@ -25,7 +25,7 @@ class Verify : AppCompatActivity() {
     var userDatabase: DatabaseReference? = null
     lateinit var storedVerificationId: String
     private lateinit var progress:ProgressBar
-    private lateinit var otp:PinView
+    private lateinit var otp:EditText
     private lateinit var suserDatabase: DatabaseReference
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     var firebaseUser: FirebaseUser? = null
@@ -43,7 +43,10 @@ class Verify : AppCompatActivity() {
 
         sendVerification("+91$phone")
         progress.visibility = View.VISIBLE
-
+        btnVerify.setOnClickListener {
+            sendVerification("+91$phone")
+            verifyVerification(otp.text.toString())
+        }
 
 
     }

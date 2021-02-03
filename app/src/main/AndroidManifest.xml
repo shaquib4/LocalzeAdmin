@@ -18,6 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LocalzeAdmin">
+        <activity android:name=".UserListOrderDetails"/>
+        <activity android:name=".UserOrderDetails"/>
         <activity android:name=".SellerStaffSection"></activity>
         <activity android:name=".SellerSectionActivity" />
         <activity android:name=".SellerListOrderDetails" />
