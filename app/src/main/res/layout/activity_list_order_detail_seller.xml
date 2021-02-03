@@ -43,13 +43,7 @@
                     android:textSize="@dimen/_13ssp"
                     tools:ignore="RelativeOverlap" />
 
-                <CheckBox
-                    android:id="@+id/checkbox_List_Completed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:onClick="onListCheckboxClicked" />
+
 
 
                 <View
@@ -93,12 +87,7 @@
                             android:textColor="#000000"
                             android:textSize="@dimen/_11ssp" />
 
-                        <ImageView
-                            android:id="@+id/imgListEdit"
-                            android:layout_width="@dimen/_25sdp"
-                            android:layout_height="@dimen/_25sdp"
-                            android:contentDescription="@string/todo"
-                            android:src="@drawable/edit" />
+
 
                     </TableRow>
 
@@ -314,37 +303,7 @@
 
                     </TableRow>
 
-                    <TableRow>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="5dp"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Get Direction :"
-                            android:textColor="#000000"
-                            android:textSize="@dimen/_11ssp"
-
-                            />
-
-                        <TextView
-
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/montserrat_medium"
-                            android:text="Check your customer location"
-                            android:textSize="@dimen/_10ssp" />
-
-                        <ImageView
-                            android:id="@+id/btnDirListSeller"
-                            android:layout_width="@dimen/_30sdp"
-                            android:layout_height="@dimen/_30sdp"
-                            android:src="@drawable/map_icon" />
-
-                    </TableRow>
                 </TableLayout>
 
             </androidx.cardview.widget.CardView>
