@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalOrderList
 import com.example.localzeadmin.R
+import com.example.localzeadmin.UserListOrderDetails
 import com.example.localzeadmin.UserOrderDetails
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -82,7 +83,7 @@ class AdapterListCustomerOrder(val context: Context,val list:List<ModalOrderList
 
         }
         holder.itemView.setOnClickListener {
-            val intent= Intent(context,UserOrderDetails::class.java)
+            val intent= Intent(context, UserListOrderDetails::class.java)
             intent.putExtra("uid",listDetails.orderBy)
             intent.putExtra("orderId",listDetails.orderId)
             intent.putExtra("orderTo",listDetails.orderTo)

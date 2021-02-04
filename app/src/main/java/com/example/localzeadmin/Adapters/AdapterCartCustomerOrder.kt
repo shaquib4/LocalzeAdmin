@@ -83,7 +83,7 @@ class AdapterCartCustomerOrder(val context: Context, val list: List<ModalOrderCa
         }
 
         holder.itemView.setOnClickListener {
-            val intent= Intent(context, UserListOrderDetails::class.java)
+            val intent= Intent(context, UserOrderDetails::class.java)
             intent.putExtra("uid",listDetails.orderBy.toString())
             intent.putExtra("orderTo",listDetails.orderTo)
             intent.putExtra("orderId",listDetails.orderId)

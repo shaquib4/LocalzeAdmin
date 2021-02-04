@@ -34,12 +34,11 @@ class UserListOrderDetails : AppCompatActivity() {
     private var orderId: String? = "200"
     private var orderToId: String? = "300"
     private var totalCost: String? = "400"
-    private var uid:String?="100"
+    private var uid: String?="100"
     private lateinit var userAuth: FirebaseAuth
     private var shopMobileNumber: String = ""
     private lateinit var imgBackListUser: ImageView
     private lateinit var imgMakePhone: ImageView
-    private lateinit var btnPay: Button
     private lateinit var deliveryFeeUser: TextView
     private lateinit var paymentStatusUser: TextView
     private var deliveryFee: Double? = null
@@ -64,7 +63,7 @@ class UserListOrderDetails : AppCompatActivity() {
         orderId = intent.getStringExtra("orderId")
         orderToId = intent.getStringExtra("orderTo")
         totalCost = intent.getStringExtra("totalCost")
-        uid=intent.getStringExtra("uid").toString()
+        uid= intent.getStringExtra("uid")
 
         val databaseReference =
             FirebaseDatabase.getInstance().reference.child("users").child(uid.toString()).child("MyOrderList")
@@ -131,18 +130,18 @@ class UserListOrderDetails : AppCompatActivity() {
                 when (orderStatus) {
                     "In Progress" -> {
                         orderStatusListUser.setTextColor(resources.getColor(R.color.colorPrimary))
-                        btnPay.visibility = View.GONE
+
                     }
                     "Accepted" -> {
                         orderStatusListUser.setTextColor(resources.getColor(R.color.green))
                     }
                     "Out For Delivery" -> {
                         orderStatusListUser.setTextColor(resources.getColor(R.color.acidGreen))
-                        btnPay.visibility = View.GONE
+
                     }
                     "Cancelled" -> {
                         orderStatusListUser.setTextColor(resources.getColor(R.color.red))
-                        btnPay.visibility = View.GONE
+
                     }
                 }
                 orderListIdUser.text = "OD${orderId}"
@@ -156,11 +155,7 @@ class UserListOrderDetails : AppCompatActivity() {
                 }
                 orderDateListUser.text = formattedDate
                 paymentStatusUser.text = snapshot.child("paymentMode").value.toString()
-                if (snapshot.child("paymentMode").value.toString() == "" && snapshot.child("orderStatus").value.toString() == "Accepted") {
-                    btnPay.visibility = View.VISIBLE
-                } else {
-                    btnPay.visibility = View.GONE
-                }
+
                 val reference: DatabaseReference =
                     FirebaseDatabase.getInstance().reference.child("seller")
                         .child(orderToId.toString())
