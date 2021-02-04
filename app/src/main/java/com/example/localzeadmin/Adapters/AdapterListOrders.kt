@@ -33,6 +33,6 @@ class AdapterListOrders(val context: Context, val listDetails: List<ModelList>) 
         holder.txtSNo.text = (position + 1).toString() + "."
         holder.txtItem_Name.text = list_details.itemName
         holder.item_quan.text = list_details.itemQuantity
-        holder.item_price.text = list_details.itemCost
+        holder.item_price.text = "₹" + list_details.itemCost
     }
 }
