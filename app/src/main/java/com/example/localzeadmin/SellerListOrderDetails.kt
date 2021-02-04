@@ -6,6 +6,8 @@ import android.widget.Adapter
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.localzeadmin.Adapters.AdapterListOrders
+import com.example.localzeadmin.Adapters.AdapterOrderedItems
 import com.example.localzeadmin.Adapters.AdapterSellerListOrders
 import com.example.localzeadmin.Modals.ModelList
 import com.example.localzeadmin.Modals.ModelOrderedItems
@@ -24,7 +26,7 @@ class SellerListOrderDetails : AppCompatActivity() {
     private lateinit var listPaymentStatus: TextView
     private lateinit var listDeliveryAddress: TextView
     private lateinit var recyclerListOrder: RecyclerView
-    private lateinit var adapterListOrder: ModelList
+    private lateinit var adapterListOrder: AdapterListOrders
     private lateinit var orderedListItems: List<ModelList>
     private var orderID: String? = "100"
     private var orderBy: String? = "200"
@@ -101,6 +103,9 @@ class SellerListOrderDetails : AppCompatActivity() {
                         )
                         (orderedListItems as ArrayList<ModelList>).add(obj)
                     }
+                    adapterListOrder =
+                        AdapterListOrders(this@SellerListOrderDetails, orderedListItems)
+                    recyclerListOrder.adapter = adapterListOrder
                 }
             })
     }
