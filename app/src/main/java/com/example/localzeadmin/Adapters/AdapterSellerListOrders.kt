@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalOrderList
 import com.example.localzeadmin.R
+import com.example.localzeadmin.SellerListOrderDetails
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -68,7 +69,7 @@ class AdapterSellerListOrders(
         val formattedDate = sdf.format(date)
         holder.orderTime.text = formattedDate
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, sellerListOrders::class.java)
+            val intent = Intent(context, SellerListOrderDetails::class.java)
             intent.putExtra("orderId", list_orders.orderId)
             intent.putExtra("orderBy", list_orders.orderBy)
             intent.putExtra("orderTo", list_orders.orderTo)
