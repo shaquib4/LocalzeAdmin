@@ -36,7 +36,7 @@ class AdapterSellerInfo(val context: Context, private val sellerDetails: List<Mo
         val seller_details = sellerDetails[position]
         holder.shopName.text = seller_details.shopName
         holder.sellerName.text = seller_details.sellerName
-        holder.phone.text = "MobNo.${seller_details.phoneNumber}"
+        holder.phone.text = seller_details.phoneNumber
         holder.address.text = seller_details.shopAddress
         holder.itemView.setOnClickListener {
             val intent = Intent(context, SellerSectionActivity::class.java)

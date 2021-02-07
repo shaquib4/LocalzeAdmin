@@ -66,7 +66,7 @@ class SellerInfoActivity : AppCompatActivity() {
     private fun searchPhone(s: String) {
         val querySellerDatabase =
             FirebaseDatabase.getInstance().reference.child("seller").orderByChild("phone")
-                .startAt(s).endAt(s + "\uF8FF")
+                .startAt(s).endAt(s + "\uf8ff")
         querySellerDatabase.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
 
@@ -74,13 +74,16 @@ class SellerInfoActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 (sellerInfoList as ArrayList<ModalSellerInfo>).clear()
-                val shopId = snapshot.child("shopId").value.toString()
-                val shopName = snapshot.child("shop_name").value.toString()
-                val name = snapshot.child("name").value.toString()
-                val phone = snapshot.child("phone").value.toString()
-                val address = snapshot.child("city").value.toString()
-                val obj = ModalSellerInfo(shopId, shopName, name, phone, address)
-                (sellerInfoList as ArrayList<ModalSellerInfo>).add(obj)
+                for (i in snapshot.children) {
+                    val obj = ModalSellerInfo(
+                        i.child("shopId").value.toString(),
+                        i.child("shop_name").value.toString(),
+                        i.child("name").value.toString(),
+                        i.child("phone").value.toString(),
+                        i.child("city").value.toString()
+                    )
+                    (sellerInfoList as ArrayList<ModalSellerInfo>).add(obj)
+                }
                 adapterSellerInfo = AdapterSellerInfo(this@SellerInfoActivity, sellerInfoList)
                 recyclerInfoSeller.adapter = adapterSellerInfo
             }
