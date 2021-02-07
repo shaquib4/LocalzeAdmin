@@ -11,10 +11,12 @@ class ContinueIn : AppCompatActivity() {
     private lateinit var progress:ProgressBar
     private lateinit var btnCustomer:Button
     private lateinit var btnSeller:Button
+    private lateinit var btnNotification:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_continue_in)
         progress=findViewById(R.id.progress_continue)
+        btnNotification=findViewById(R.id.notification)
         btnCustomer=findViewById(R.id.btnCustomer)
         btnSeller=findViewById(R.id.btnseller)
         progress.visibility= View.GONE
@@ -28,6 +30,10 @@ class ContinueIn : AppCompatActivity() {
             progress.visibility=View.VISIBLE
          startActivity(Intent(this,SellerInfoActivity::class.java))
             progress.visibility= View.GONE
+        }
+
+        btnNotification.setOnClickListener {
+            startActivity(Intent(this,ActvityNotification::class.java))
         }
     }
 }
