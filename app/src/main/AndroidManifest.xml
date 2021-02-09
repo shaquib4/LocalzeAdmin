@@ -28,6 +28,8 @@
         <activity android:name=".SellerCartOrderDetails" />
         <activity android:name=".CustomerOrder" />
         <activity android:name=".UserDetailsActivity" />
+        <activity android:name=".SelectionActivityUsers"/>
+        <activity android:name=".SingleNotification"/>
         <activity android:name=".CityActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

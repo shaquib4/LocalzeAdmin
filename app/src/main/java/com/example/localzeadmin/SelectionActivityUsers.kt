@@ -18,13 +18,13 @@ class SelectionActivityUsers : AppCompatActivity() {
         btnNotification.setOnClickListener {
          val uid=intent.getStringExtra("uid")
          val intent=Intent(this,SingleNotification::class.java)
-         intent.putExtra("uid",uid)
-         startActivity(intent)
+            intent.putExtra("selected","users")
+            intent.putExtra("uid",uid)
+            startActivity(intent)
         }
         btnOrders.setOnClickListener {
             val uid=intent.getStringExtra("uid")
             val intent=Intent(this,CustomerOrder::class.java)
-            intent.putExtra("selected","users")
             intent.putExtra("uid",uid)
             startActivity(intent)
         }
