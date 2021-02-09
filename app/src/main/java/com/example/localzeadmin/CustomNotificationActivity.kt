@@ -3,6 +3,8 @@ package com.example.localzeadmin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import com.android.volley.toolbox.JsonObjectRequest
 import org.json.JSONObject
@@ -11,20 +13,67 @@ import com.android.volley.toolbox.Volley
 
 class CustomNotificationActivity : AppCompatActivity() {
     private lateinit var btnAddProduct: Button
+    private lateinit var title: EditText
+    private lateinit var message: EditText
+    private lateinit var selectPerson: Spinner
+    private lateinit var selectReason: Spinner
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_custom_notification)
         btnAddProduct = findViewById(R.id.btnAddProductNotification)
-        btnAddProduct.setOnClickListener {
-            prepareNotificationMessage()
+        title = findViewById(R.id.edtTitle)
+        message = findViewById(R.id.edtMessage)
+        selectPerson = findViewById(R.id.spnSelect)
+        selectReason = findViewById(R.id.spnProduct)
+        if (selectReason.selectedItem.toString() == "Add Product") {
+            btnAddProduct.setOnClickListener {
+                prepareNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+            }
+        } else if (selectReason.selectedItem.toString() == "Offer") {
+            btnAddProduct.setOnClickListener {
+                prepareNewNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+            }
         }
+
     }
 
-    private fun prepareNotificationMessage() {
+    private fun prepareNewNotificationMessage(
+        title: String,
+        message: String,
+        selectPerson: String,
+        selectReason: String
+    ) {
         val NOTIFICATION_TOPIC =
             "/topics/PUSH_NOTIFICATIONS"
-        val NOTIFICATION_TITLE = "Add Products in Your Shop"
-        val NOTIFICATION_MESSAGE = "Customers viewing your shop ❤ ,add more products...."
+        val NOTIFICATION_TITLE =title
+        val NOTIFICATION_MESSAGE=message
+        val NOTIFICATION_TYPE="Offer"
+        val notificationJs = JSONObject()
+        val notificationBodyJs = JSONObject()
+        try {
+            notificationBodyJs.put("notificationType", NOTIFICATION_TYPE)
+            notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
+            notificationBodyJs.put("notificationMessage", NOTIFICATION_MESSAGE)
+            notificationBodyJs.put("person",selectPerson)
+            notificationBodyJs.put("reason",selectReason)
+            notificationJs.put("to", NOTIFICATION_TOPIC)
+            notificationJs.put("data", notificationBodyJs)
+        }catch (e:Exception){
+            Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+        }
+        sendFcmNotification(notificationJs)
+    }
+
+    private fun prepareNotificationMessage(
+        title: String,
+        message: String,
+        selectPerson: String,
+        selectReason: String
+    ) {
+        val NOTIFICATION_TOPIC =
+            "/topics/PUSH_NOTIFICATIONS"
+        val NOTIFICATION_TITLE = title
+        val NOTIFICATION_MESSAGE = message
         val NOTIFICATION_TYPE = "AddProduct"
         val notificationJs = JSONObject()
         val notificationBodyJs = JSONObject()
@@ -32,6 +81,8 @@ class CustomNotificationActivity : AppCompatActivity() {
             notificationBodyJs.put("notificationType", NOTIFICATION_TYPE)
             notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
             notificationBodyJs.put("notificationMessage", NOTIFICATION_MESSAGE)
+            notificationBodyJs.put("person",selectPerson)
+            notificationBodyJs.put("reason",selectReason)
             notificationJs.put("to", NOTIFICATION_TOPIC)
             notificationJs.put("data", notificationBodyJs)
         } catch (e: Exception) {

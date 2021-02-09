@@ -104,6 +104,7 @@
         android:background="@drawable/stroke_red"
         android:entries="@array/Sp_select"
         android:paddingHorizontal="@dimen/_10sdp" />
+
     <TextView
         android:id="@+id/txtProduct"
         android:layout_width="wrap_content"
