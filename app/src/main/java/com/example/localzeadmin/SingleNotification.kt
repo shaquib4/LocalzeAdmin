@@ -12,20 +12,20 @@ import org.json.JSONObject
 import java.lang.Exception
 
 class SingleNotification : AppCompatActivity() {
-    private lateinit var edtTitle:EditText
+    private lateinit var edtTitle: EditText
     private lateinit var edtMessage: EditText
-    private lateinit var btnSend:Button
+    private lateinit var btnSend: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_notification)
-        edtTitle=findViewById(R.id.edtTitleSingle)
-        edtMessage=findViewById(R.id.edtMessageSingle)
-        btnSend=findViewById(R.id.btnSendSingle)
+        edtTitle = findViewById(R.id.edtTitleSingle)
+        edtMessage = findViewById(R.id.edtMessageSingle)
+        btnSend = findViewById(R.id.btnSendSingle)
 
         btnSend.setOnClickListener {
-            val selected=intent.getStringExtra("selected").toString()
-            val uid=intent.getStringExtra("uid").toString()
-            prepareNotification(selected,uid)
+            val selected = intent.getStringExtra("selected").toString()
+            val uid = intent.getStringExtra("uid").toString()
+            prepareNotification(selected, uid)
         }
     }
 
@@ -35,17 +35,17 @@ class SingleNotification : AppCompatActivity() {
         val NOTIFICATION_TITLE = edtTitle.text.toString()
         val NOTIFICATION_MESSAGE = edtMessage.text.toString()
         val NOTIFICATION_TYPE = "SingleNotification"
-        val notificationJs=JSONObject()
-        val notificationBodyJs=JSONObject()
+        val notificationJs = JSONObject()
+        val notificationBodyJs = JSONObject()
         try {
             notificationBodyJs.put("notificationType", NOTIFICATION_TYPE)
             notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
             notificationBodyJs.put("notificationMessage", NOTIFICATION_MESSAGE)
             notificationBodyJs.put("selectedPerson", selected)
-            notificationBodyJs.put("uid",uid)
+            notificationBodyJs.put("uid", uid)
             notificationJs.put("to", NOTIFICATION_TOPIC)
             notificationJs.put("data", notificationBodyJs)
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
         }
         sendFcmNotification(notificationJs)
@@ -56,7 +56,7 @@ class SingleNotification : AppCompatActivity() {
             "https://fcm.googleapis.com/fcm/send",
             notificationJs,
             Response.Listener {
-                Toast.makeText(this,"Successfully Sent",Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Successfully Sent", Toast.LENGTH_LONG).show()
             }, Response.ErrorListener {
                 Toast.makeText(this, "Some error occurred", Toast.LENGTH_SHORT).show()
             }
