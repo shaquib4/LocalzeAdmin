@@ -2,7 +2,6 @@ package com.example.localzeadmin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -25,11 +24,12 @@ class SingleNotification : AppCompatActivity() {
 
         btnSend.setOnClickListener {
             val selected=intent.getStringExtra("selected").toString()
-            prepareNotification(selected)
+            val uid=intent.getStringExtra("uid").toString()
+            prepareNotification(selected,uid)
         }
     }
 
-    private fun prepareNotification(selected: String) {
+    private fun prepareNotification(selected: String, uid: String) {
         val NOTIFICATION_TOPIC =
             "/topics/PUSH_NOTIFICATIONS"
         val NOTIFICATION_TITLE = edtTitle.text.toString()
@@ -42,6 +42,7 @@ class SingleNotification : AppCompatActivity() {
             notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
             notificationBodyJs.put("notificationMessage", NOTIFICATION_MESSAGE)
             notificationBodyJs.put("selectedPerson", selected)
+            notificationBodyJs.put("uid",uid)
             notificationJs.put("to", NOTIFICATION_TOPIC)
             notificationJs.put("data", notificationBodyJs)
         }catch (e:Exception){
