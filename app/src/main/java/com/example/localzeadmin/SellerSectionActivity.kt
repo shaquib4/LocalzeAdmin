@@ -15,6 +15,7 @@ class SellerSectionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_seller_section)
         cardStaff = findViewById(R.id.cardStaff)
         cardOrders = findViewById(R.id.cardOrders)
+        cardNotification=findViewById(R.id.cardNotificationSeller)
         shopId = intent.getStringExtra("shopId")
         cardOrders.setOnClickListener {
             val intent = Intent(this, UserDetailsActivity::class.java)
