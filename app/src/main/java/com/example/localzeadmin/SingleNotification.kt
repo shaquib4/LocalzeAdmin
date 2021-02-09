@@ -1,45 +1,42 @@
 package com.example.localzeadmin
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Spinner
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
-import com.android.volley.Response
+import java.lang.Exception
 
-class ActivityNotification : AppCompatActivity() {
-    private lateinit var messageTitle: EditText
-    private lateinit var messageText: EditText
-    private lateinit var selectedPerson: Spinner
-    private lateinit var sendMessage: Button
+class SingleNotification : AppCompatActivity() {
+    private lateinit var edtTitle:EditText
+    private lateinit var edtMessage: EditText
+    private lateinit var btnSend:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_activity_notification)
-        messageTitle = findViewById(R.id.edtTitle)
-        messageText = findViewById(R.id.edtMessage)
-        selectedPerson = findViewById(R.id.spnSelect)
-        sendMessage = findViewById(R.id.btnSend)
-        val title = messageTitle.text.toString()
-        val message = messageText.text.toString()
+        setContentView(R.layout.activity_single_notification)
+        edtTitle=findViewById(R.id.edtTitleSingle)
+        edtMessage=findViewById(R.id.edtMessageSingle)
+        btnSend=findViewById(R.id.btnSendSingle)
 
-        sendMessage.setOnClickListener {
-            val selected = selectedPerson.selectedItem.toString()
-            prepareNotificationMessage(title, message, selected)
+        btnSend.setOnClickListener {
+            val selected=intent.getStringExtra("selected").toString()
+            prepareNotification(selected)
         }
     }
 
-    private fun prepareNotificationMessage(title: String, message: String, selected: String) {
+    private fun prepareNotification(selected: String) {
         val NOTIFICATION_TOPIC =
             "/topics/PUSH_NOTIFICATIONS"
-        val NOTIFICATION_TITLE = messageTitle.text.toString()
-        val NOTIFICATION_MESSAGE = messageText.text.toString()
-        val NOTIFICATION_TYPE = "AdminApp"
-        val notificationJs = JSONObject()
-        val notificationBodyJs = JSONObject()
+        val NOTIFICATION_TITLE = edtTitle.text.toString()
+        val NOTIFICATION_MESSAGE = edtMessage.text.toString()
+        val NOTIFICATION_TYPE = "SingleNotification"
+        val notificationJs=JSONObject()
+        val notificationBodyJs=JSONObject()
         try {
             notificationBodyJs.put("notificationType", NOTIFICATION_TYPE)
             notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
@@ -47,11 +44,10 @@ class ActivityNotification : AppCompatActivity() {
             notificationBodyJs.put("selectedPerson", selected)
             notificationJs.put("to", NOTIFICATION_TOPIC)
             notificationJs.put("data", notificationBodyJs)
-        } catch (e: Exception) {
+        }catch (e:Exception){
             Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
         }
         sendFcmNotification(notificationJs)
-
     }
 
     private fun sendFcmNotification(notificationJs: JSONObject) {
@@ -59,8 +55,8 @@ class ActivityNotification : AppCompatActivity() {
             "https://fcm.googleapis.com/fcm/send",
             notificationJs,
             Response.Listener {
-               Toast.makeText(this,"Successfully Sent",Toast.LENGTH_LONG).show()
-            },Response.ErrorListener {
+                Toast.makeText(this,"Successfully Sent",Toast.LENGTH_LONG).show()
+            }, Response.ErrorListener {
                 Toast.makeText(this, "Some error occurred", Toast.LENGTH_SHORT).show()
             }
         ) {
@@ -75,4 +71,5 @@ class ActivityNotification : AppCompatActivity() {
         Volley.newRequestQueue(this).add(jsonObjectRequest)
 
     }
+
 }

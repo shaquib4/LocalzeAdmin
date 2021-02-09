@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.CustomerOrder
 import com.example.localzeadmin.Modals.ModalUserInfo
 import com.example.localzeadmin.R
+import com.example.localzeadmin.SelectionActivityUsers
 
 class AdapterUserInfo(val context: Context,val userList:List<ModalUserInfo>):
     RecyclerView.Adapter<AdapterUserInfo.HolderUserInfo>() {
@@ -38,7 +39,7 @@ class AdapterUserInfo(val context: Context,val userList:List<ModalUserInfo>):
         holder.phone.text=userInfo.userMobile
         holder.userName.text=userInfo.userName
         holder.itemView.setOnClickListener {
-            val intent= Intent(context,CustomerOrder::class.java)
+            val intent= Intent(context,SelectionActivityUsers::class.java)
              intent.putExtra("uid",userInfo.uid)
              context.startActivity(intent)
         }

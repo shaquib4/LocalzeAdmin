@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fcfcfc"
-    tools:context=".SellerSectionActivity">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="#FCFCFC">
+
     <TextView
         android:id="@+id/txtStaffSection"
         android:layout_width="match_parent"
@@ -19,17 +12,17 @@
         android:background="#de4500"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
-        android:text="SELLER SECTION"
+        android:text="USER SELECTION"
         android:textAlignment="center"
         android:textColor="#fff"
         android:textSize="@dimen/_15ssp" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardStaff"
+        android:id="@+id/cardNotification"
         android:layout_width="match_parent"
+        android:layout_margin="@dimen/_10sdp"
         android:layout_height="@dimen/_220sdp"
         android:layout_below="@id/txtStaffSection"
-        android:layout_margin="@dimen/_10sdp"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
@@ -51,7 +44,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="STAFF"
+                android:text="NOTIFICATION"
                 android:textColor="#000"
                 android:textSize="@dimen/_20ssp" />
         </RelativeLayout>
@@ -59,10 +52,10 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardOrders"
+        android:id="@+id/OrdersCard"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_220sdp"
-        android:layout_below="@id/cardStaff"
+        android:layout_below="@id/cardNotification"
         android:layout_margin="@dimen/_10sdp"
         app:cardCornerRadius="10dp">
 
@@ -90,38 +83,5 @@
                 android:textSize="@dimen/_20ssp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardNotificationSeller"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_220sdp"
-        android:layout_below="@id/cardOrders"
-        android:layout_margin="@dimen/_10sdp"
-        app:cardCornerRadius="10dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_add_item">
-
-            <ImageView
-                android:id="@+id/imgStaffs"
-                android:layout_width="@dimen/_120sdp"
-                android:layout_height="@dimen/_120sdp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/staff_group" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/imgStaffs"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/montserrat_bold"
-                android:text="NOTIFICATION"
-                android:textColor="#000"
-                android:textSize="@dimen/_20ssp" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
-    </ScrollView>
 </RelativeLayout>

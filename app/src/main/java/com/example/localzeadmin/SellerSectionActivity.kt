@@ -7,6 +7,7 @@ import androidx.cardview.widget.CardView
 
 class SellerSectionActivity : AppCompatActivity() {
     private lateinit var cardStaff: CardView
+    private lateinit var cardNotification: CardView
     private lateinit var cardOrders: CardView
     private var shopId: String? = "200"
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,12 @@ class SellerSectionActivity : AppCompatActivity() {
             intent.putExtra("shopId", shopId.toString())
             startActivity(intent)
             finish()
+        }
+        cardNotification.setOnClickListener {
+            val intent=Intent(this,SingleNotification::class.java)
+            intent.putExtra("selected","seller")
+            intent.putExtra("uid",shopId.toString())
+            startActivity(intent)
         }
     }
 }

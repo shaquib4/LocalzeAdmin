@@ -33,7 +33,7 @@ class ContinueIn : AppCompatActivity() {
         }
 
         btnNotification.setOnClickListener {
-            startActivity(Intent(this,ActvityNotification::class.java))
+            startActivity(Intent(this,ActivityNotification::class.java))
         }
     }
 }
