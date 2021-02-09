@@ -5,6 +5,10 @@
         <item> seller</item>
     </string-array>
 
+    <string-array name="Sp_Product">
+        <item> Offer</item>
+        <item> Add Product</item>
+    </string-array>
     <string name="app_name">LocalzeAdmin</string>
     <string name="dashboard">Dashboard</string>
     <string name="Profile">Profile</string>

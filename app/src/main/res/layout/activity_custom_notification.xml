@@ -4,16 +4,137 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CustomNotificationActivity">
+    android:background="#fff"
+    tools:context=".ActivityNotification">
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/txtNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/imgBack"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Notification Section"
+            android:textColor="#000"
+            android:textSize="@dimen/_15ssp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#d3d3d3" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl1"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Title"
+        android:textColor="#000"
+        android:textSize="@dimen/_15ssp" />
+
+    <EditText
+        android:id="@+id/edtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/stroke_red"
+        android:drawableLeft="@drawable/ic_title"
+        android:fontFamily="@font/montserrat_medium"
+        android:hint="Enter Title"
+        android:paddingHorizontal="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/txtMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtTitle"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Message"
+        android:textColor="#000"
+        android:textSize="@dimen/_15ssp" />
+
+    <EditText
+        android:id="@+id/edtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@+id/txtMessage"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/stroke_red"
+        android:drawableLeft="@drawable/ic_title"
+        android:fontFamily="@font/montserrat_medium"
+        android:hint="Enter Message"
+        android:paddingHorizontal="@dimen/_10sdp" />
+
+    <TextView
+        android:id="@+id/txtSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edtMessage"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Select Person"
+        android:textColor="#000"
+        android:textSize="@dimen/_15ssp" />
+
+    <Spinner
+        android:id="@+id/spnSelect"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/txtSelect"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/stroke_red"
+        android:entries="@array/Sp_select"
+        android:paddingHorizontal="@dimen/_10sdp" />
+    <TextView
+        android:id="@+id/txtProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spnSelect"
+        android:layout_margin="@dimen/_10sdp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Reason"
+        android:textColor="#000"
+        android:textSize="@dimen/_15ssp" />
+
+    <Spinner
+        android:id="@+id/spnProduct"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/txtProduct"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@drawable/stroke_red"
+        android:entries="@array/Sp_Product"
+        android:paddingHorizontal="@dimen/_10sdp" />
 
     <Button
         android:id="@+id/btnAddProductNotification"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ff4500"
-        android:padding="2dp"
-        android:text="Add Product Notification"
-        android:textColor="#ffffff"
-        android:textSize="@dimen/_18ssp" />
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@id/spnProduct"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/proceed_to_add"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Send Message"
+        android:textColor="#fff"
+        android:textSize="@dimen/_15ssp" />
 
 </RelativeLayout>

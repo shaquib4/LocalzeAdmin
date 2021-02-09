@@ -47,7 +47,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Title"
         android:textColor="#000"
-        android:textSize="@dimen/_20ssp" />
+        android:textSize="@dimen/_15ssp" />
 
     <EditText
         android:id="@+id/edtTitle"
@@ -70,7 +70,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Message"
         android:textColor="#000"
-        android:textSize="@dimen/_20ssp" />
+        android:textSize="@dimen/_15ssp" />
 
     <EditText
         android:id="@+id/edtMessage"
@@ -93,7 +93,7 @@
         android:fontFamily="@font/montserrat_bold"
         android:text="Select Person"
         android:textColor="#000"
-        android:textSize="@dimen/_20ssp" />
+        android:textSize="@dimen/_15ssp" />
 
     <Spinner
         android:id="@+id/spnSelect"
