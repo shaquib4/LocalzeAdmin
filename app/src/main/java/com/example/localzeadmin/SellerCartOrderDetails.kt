@@ -69,11 +69,9 @@ class SellerCartOrderDetails : AppCompatActivity() {
                 }
                 val paymentMode = snapshot.child("paymentMode").value.toString()
                 orderId.text = "OD${ordersId}"
-                /*val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
+                val sdf = SimpleDateFormat("dd/MM/yyyy,hh:mm a")
                 val date = Date(orderTime.toLong())
-                val formattedDate = sdf.format(date)*/
-                val date = Date(orderTime.toLong())
-                val formattedDate = "${date.date}/${date.month}/${date.year}"
+                val formattedDate = sdf.format(date)
                 orderDate.text = formattedDate
                 deliveryAddress.text = deliverysAddress
                 orderStatus.text = ordersStatus
