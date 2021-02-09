@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LocalzeAdmin">
-        <activity android:name=".CustomNotificationActivity"></activity>
+        <activity android:name=".ChooseNotification"></activity>
+        <activity android:name=".CustomNotificationActivity" />
         <activity android:name=".ActivityNotification" />
         <activity android:name=".UserListOrderDetails" />
         <activity android:name=".UserOrderDetails" />
@@ -28,8 +29,8 @@
         <activity android:name=".SellerCartOrderDetails" />
         <activity android:name=".CustomerOrder" />
         <activity android:name=".UserDetailsActivity" />
-        <activity android:name=".SelectionActivityUsers"/>
-        <activity android:name=".SingleNotification"/>
+        <activity android:name=".SelectionActivityUsers" />
+        <activity android:name=".SingleNotification" />
         <activity android:name=".CityActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
