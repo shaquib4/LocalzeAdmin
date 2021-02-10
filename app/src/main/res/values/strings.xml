@@ -1,13 +1,14 @@
 <resources>
 
     <string-array name="Sp_select">
-        <item> Users</item>
-        <item> Seller</item>
+        <item> users</item>
+        <item> seller</item>
     </string-array>
 
     <string-array name="Sp_Product">
         <item> Offer</item>
-        <item> Add Product</item>
+        <item> Add More Product</item>
+        <item> No Product Added</item>
     </string-array>
     <string name="app_name">LocalzeAdmin</string>
     <string name="dashboard">Dashboard</string>

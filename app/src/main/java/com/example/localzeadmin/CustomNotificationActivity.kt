@@ -25,7 +25,7 @@ class CustomNotificationActivity : AppCompatActivity() {
         message = findViewById(R.id.edtMessage)
         selectPerson = findViewById(R.id.spnSelect)
         selectReason = findViewById(R.id.spnProduct)
-        if (selectReason.selectedItem.toString() == "Add Product") {
+        if (selectReason.selectedItem.toString() == "Add More Product") {
             btnAddProduct.setOnClickListener {
                 prepareNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
             }
@@ -33,7 +33,38 @@ class CustomNotificationActivity : AppCompatActivity() {
             btnAddProduct.setOnClickListener {
                 prepareNewNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
             }
+        }else if (selectReason.selectedItem.toString()=="No Product Added"){
+            btnAddProduct.setOnClickListener {
+                prepareNoProductNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+            }
         }
+
+    }
+
+    private fun prepareNoProductNotificationMessage
+                ( title: String,
+                  message: String,
+                  selectPerson: String,
+                  selectReason: String) {
+        val NOTIFICATION_TOPIC =
+            "/topics/PUSH_NOTIFICATIONS"
+        val NOTIFICATION_TITLE =title
+        val NOTIFICATION_MESSAGE=message
+        val NOTIFICATION_TYPE="NoProduct"
+        val notificationJs = JSONObject()
+        val notificationBodyJs = JSONObject()
+        try {
+            notificationBodyJs.put("notificationType", NOTIFICATION_TYPE)
+            notificationBodyJs.put("notificationTitle", NOTIFICATION_TITLE)
+            notificationBodyJs.put("notificationMessage", NOTIFICATION_MESSAGE)
+            notificationBodyJs.put("person",selectPerson)
+            notificationBodyJs.put("reason",selectReason)
+            notificationJs.put("to", NOTIFICATION_TOPIC)
+            notificationJs.put("data", notificationBodyJs)
+        }catch (e:Exception){
+            Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
+        }
+        sendFcmNotification(notificationJs)
 
     }
 
