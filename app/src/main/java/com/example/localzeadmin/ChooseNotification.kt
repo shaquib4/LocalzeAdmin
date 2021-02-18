@@ -11,8 +11,8 @@ class ChooseNotification : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_notification)
-        simple=findViewById(R.id.cardNotificationChoose)
-        custom=findViewById(R.id.CardSimple)
+        simple=findViewById(R.id.CardSimple)
+        custom=findViewById(R.id.cardNotificationChoose)
         simple.setOnClickListener {
             startActivity(Intent(this,ActivityNotification::class.java))
         }
