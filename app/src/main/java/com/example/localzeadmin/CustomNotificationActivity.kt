@@ -25,7 +25,7 @@ class CustomNotificationActivity : AppCompatActivity() {
         message = findViewById(R.id.edtMessage)
         selectPerson = findViewById(R.id.spnSelect)
         selectReason = findViewById(R.id.spnProduct)
-        if (selectReason.selectedItem.toString() == "Add More Product") {
+      /*  if (selectReason.selectedItem.toString() == "Add More Product") {
             btnAddProduct.setOnClickListener {
                 prepareNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
             }
@@ -37,7 +37,22 @@ class CustomNotificationActivity : AppCompatActivity() {
             btnAddProduct.setOnClickListener {
                 prepareNoProductNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
             }
+        }*/
+        btnAddProduct.setOnClickListener {
+            when (selectReason.selectedItem.toString().trim()){
+                "Add More Product"->{
+                    prepareNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+
+                }
+                "Offer"->{
+                    prepareNewNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+                }
+                "No Product"->{
+                    prepareNoProductNotificationMessage(title.text.toString(),message.text.toString(),selectPerson.selectedItem.toString(),selectReason.selectedItem.toString())
+                }
+            }
         }
+
 
     }
 

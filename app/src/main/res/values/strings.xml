@@ -1,8 +1,8 @@
 <resources>
 
     <string-array name="Sp_select">
-        <item> users</item>
-        <item> seller</item>
+        <item>users</item>
+        <item>seller</item>
     </string-array>
 
     <string-array name="Sp_Product">
