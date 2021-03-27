@@ -9,6 +9,7 @@
         <item> Offer</item>
         <item> Add More Product</item>
         <item> No Product Added</item>
+        <item> Add Account</item>
     </string-array>
     <string name="app_name">LocalzeAdmin</string>
     <string name="dashboard">Dashboard</string>
