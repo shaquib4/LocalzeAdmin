@@ -193,10 +193,10 @@ class CustomNotificationActivity : AppCompatActivity() {
                 "https://fcm.googleapis.com/fcm/send",
                 notificationJs,
                 Response.Listener {
-
+                    Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
                 },
                 Response.ErrorListener {
-
+                    Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
                 }) {
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers = HashMap<String, String>()
