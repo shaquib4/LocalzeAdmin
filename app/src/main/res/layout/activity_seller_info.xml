@@ -5,8 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SellerInfoActivity">
+    <RelativeLayout
+        android:id="@+id/users"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:background="@drawable/background">
+        <TextView
+            android:layout_marginLeft="@dimen/_16ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seller"
+            android:textStyle="bold"
+            android:textSize="@dimen/_22ssp"
+            android:layout_centerVertical="true"
+            android:textColor="#fff"/>
+        <Button
+            android:id="@+id/bankDetails"
+            android:background="@drawable/bg_product_shop"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:text="Bank Details"
+            android:textSize="@dimen/_14ssp"
+            android:textAllCaps="false"
+            android:textColor="#de4500"
+            android:fontFamily="@font/montserrat_medium"
+            android:layout_marginEnd="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"/>
 
+    </RelativeLayout>
     <EditText
+        android:layout_below="@+id/users"
         android:id="@+id/searchPhone"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_35sdp"
