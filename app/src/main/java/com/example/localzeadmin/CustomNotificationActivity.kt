@@ -102,6 +102,7 @@ class CustomNotificationActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, e.message, Toast.LENGTH_SHORT).show()
         }
+        sendFcmNotification(notificationJs)
     }
 
     private fun prepareNoProductNotificationMessage(
