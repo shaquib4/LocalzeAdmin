@@ -21,7 +21,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Your Bank Details"
+            android:text="Seller Bank Details"
             android:textColor="#fff"
             android:textSize="@dimen/_20ssp" />
 
@@ -78,19 +78,7 @@
             android:textColor="#000"
             android:textSize="@dimen/_18ssp" />
 
-        <Button
-            android:id="@+id/btnShopNow"
-            android:layout_width="160dp"
-            android:layout_height="@dimen/_27sdp"
-            android:layout_below="@id/txt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/round2_btn"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="Add Now"
-            android:textAllCaps="false"
-            android:textColor="#fcfcfc"
-            android:textSize="18sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -116,7 +104,7 @@
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
-                android:id="@+id/acc_number"
+                android:id="@+id/acc_numberSeller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtaccNo"
@@ -145,7 +133,7 @@
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
-                android:id="@+id/beneficiary_Name"
+                android:id="@+id/beneficiary_NameSeller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtaccName"
@@ -174,7 +162,7 @@
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
-                android:id="@+id/acc_type"
+                android:id="@+id/acc_typeSeller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtaccType"
@@ -201,7 +189,7 @@
                 android:textSize="@dimen/_16ssp" />
 
             <TextView
-                android:id="@+id/RId"
+                android:id="@+id/RIdSeller"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtRId"

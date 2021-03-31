@@ -63,7 +63,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/noAccount"
+        android:id="@+id/noAccountff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_create"
@@ -94,7 +94,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/account"
+        android:id="@+id/accountff"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/rl_create">

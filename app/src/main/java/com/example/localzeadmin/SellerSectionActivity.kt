@@ -9,6 +9,7 @@ class SellerSectionActivity : AppCompatActivity() {
     private lateinit var cardStaff: CardView
     private lateinit var cardNotification: CardView
     private lateinit var cardOrders: CardView
+    private lateinit var bankDetails:CardView
     private var shopId: String? = "200"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +17,7 @@ class SellerSectionActivity : AppCompatActivity() {
         cardStaff = findViewById(R.id.cardStaff)
         cardOrders = findViewById(R.id.cardOrders)
         cardNotification=findViewById(R.id.cardNotificationSeller)
+        bankDetails=findViewById(R.id.cardBankSeller)
         shopId = intent.getStringExtra("shopId")
         cardOrders.setOnClickListener {
             val intent = Intent(this, UserDetailsActivity::class.java)
@@ -33,6 +35,11 @@ class SellerSectionActivity : AppCompatActivity() {
             val intent=Intent(this,SingleNotification::class.java)
             intent.putExtra("selected","seller")
             intent.putExtra("uid",shopId.toString())
+            startActivity(intent)
+        }
+        bankDetails.setOnClickListener {
+            val intent=Intent(this,SellerBanksDetailSeller::class.java)
+            intent.putExtra("shopId",shopId.toString())
             startActivity(intent)
         }
     }
