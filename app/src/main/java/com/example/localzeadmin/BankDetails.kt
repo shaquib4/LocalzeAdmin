@@ -40,7 +40,7 @@ class BankDetails : AppCompatActivity() {
                         val shopName = i.child("shop_name").value.toString()
                         val sellerName = i.child("name").value.toString()
                         val phoneNumber = i.child("phone").value.toString()
-                        val shopAddress = i.child("address").value.toString()
+                        val shopAddress = i.child("locality").value.toString()
                         val obj =
                             ModalSellerInfo(shopId, shopName, sellerName, phoneNumber, shopAddress)
                         (listSellersDetails as ArrayList<ModalSellerInfo>).add(obj)

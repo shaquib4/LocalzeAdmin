@@ -200,30 +200,18 @@
                 android:textColor="#000"
                 android:textSize="@dimen/_16ssp" />
 
-            <EditText
-                android:id="@+id/edtRazorpay"
-                android:layout_width="match_parent"
-                android:layout_below="@id/txtRId"
-                android:textSize="@dimen/_16ssp"
+            <TextView
+                android:id="@+id/RId"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Enter Razorpay Id"/>
+                android:layout_below="@+id/txtRId"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Acxtyuiop"
+                android:textColor="#ff6347"
+                android:textSize="@dimen/_15ssp" />
 
         </RelativeLayout>
 
-
-            <Button
-                android:id="@+id/addRazorpay"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@drawable/bg_buttons"
-                android:layout_marginBottom="@dimen/_35sdp"
-                android:layout_marginHorizontal="@dimen/_32sdp"
-                android:text="Save Details"
-                android:textAllCaps="false"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:textSize="@dimen/_18ssp"/>
 
 
     </RelativeLayout>

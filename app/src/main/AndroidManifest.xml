@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LocalzeAdmin">
-        <activity android:name=".SellerBankDetails"></activity>
+        <activity android:name=".SellerBanksDetailSeller"></activity>
+        <activity android:name=".SellerBankDetails" />
         <activity android:name=".Adapters.SellerBankDetail" />
         <activity android:name=".BankDetails" />
         <activity android:name=".ChooseNotification" />
