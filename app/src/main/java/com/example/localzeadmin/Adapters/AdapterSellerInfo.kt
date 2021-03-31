@@ -9,10 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.localzeadmin.Modals.ModalSellerInfo
 import com.example.localzeadmin.R
+import com.example.localzeadmin.SellerBankDetails
 import com.example.localzeadmin.SellerSectionActivity
 import com.example.localzeadmin.UserDetailsActivity
 
-class AdapterSellerInfo(val context: Context, private val sellerDetails: List<ModalSellerInfo>) :
+class AdapterSellerInfo(
+    val context: Context,
+    private val sellerDetails: List<ModalSellerInfo>,
+    private val medium: String
+) :
     RecyclerView.Adapter<AdapterSellerInfo.HolderSellerInfo>() {
     class HolderSellerInfo(view: View) : RecyclerView.ViewHolder(view) {
         val shopName: TextView = view.findViewById(R.id.ShopName)
@@ -39,9 +44,16 @@ class AdapterSellerInfo(val context: Context, private val sellerDetails: List<Mo
         holder.phone.text = seller_details.phoneNumber
         holder.address.text = seller_details.shopAddress
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, SellerSectionActivity::class.java)
-            intent.putExtra("shopId", seller_details.shopId)
-            context.startActivity(intent)
+            if (medium == "Details") {
+                val intent = Intent(context, SellerSectionActivity::class.java)
+                intent.putExtra("shopId", seller_details.shopId)
+                context.startActivity(intent)
+            } else {
+                val intent = Intent(context, SellerBankDetails::class.java)
+                intent.putExtra("shopId", seller_details.shopId)
+                context.startActivity(intent)
+            }
+
         }
     }
 }

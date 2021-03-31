@@ -57,7 +57,7 @@ class SellerInfoActivity : AppCompatActivity() {
                     )
                     (sellerInfoList as ArrayList<ModalSellerInfo>).add(obj)
                 }
-                adapterSellerInfo = AdapterSellerInfo(this@SellerInfoActivity, sellerInfoList)
+                adapterSellerInfo = AdapterSellerInfo(this@SellerInfoActivity, sellerInfoList,"Details")
                 recyclerInfoSeller.adapter = adapterSellerInfo
             }
         })
@@ -84,7 +84,7 @@ class SellerInfoActivity : AppCompatActivity() {
                     )
                     (sellerInfoList as ArrayList<ModalSellerInfo>).add(obj)
                 }
-                adapterSellerInfo = AdapterSellerInfo(this@SellerInfoActivity, sellerInfoList)
+                adapterSellerInfo = AdapterSellerInfo(this@SellerInfoActivity, sellerInfoList,"Details")
                 recyclerInfoSeller.adapter = adapterSellerInfo
             }
         })
