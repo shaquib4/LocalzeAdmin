@@ -6,9 +6,9 @@ import android.os.Bundle
 import androidx.cardview.widget.CardView
 
 class SellerSectionActivity : AppCompatActivity() {
-    private lateinit var cardStaff: CardView
-    private lateinit var cardNotification: CardView
-    private lateinit var cardOrders: CardView
+    private lateinit var cardStaff:CardView
+    private lateinit var cardNotification:CardView
+    private lateinit var cardOrders:CardView
     private lateinit var bankDetails:CardView
     private var shopId: String? = "200"
     override fun onCreate(savedInstanceState: Bundle?) {
