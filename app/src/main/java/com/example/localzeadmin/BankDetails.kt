@@ -22,7 +22,7 @@ class BankDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bank_details)
         listSellersDetails = ArrayList<ModalSellerInfo>()
-        recyclerSellersDetails = findViewById(R.id.recycler_seller_info)
+        recyclerSellersDetails = findViewById(R.id.recycler_seller_infoBank)
         editSearch = findViewById(R.id.searchPhoneBank)
         recyclerSellersDetails.layoutManager = LinearLayoutManager(this)
         val databaseReference = FirebaseDatabase.getInstance().reference.child("seller")
