@@ -1,9 +1,11 @@
 package com.example.localzeadmin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,13 +20,20 @@ class SellerInfoActivity : AppCompatActivity() {
     private lateinit var sellerInfoList: List<ModalSellerInfo>
     private lateinit var adapterSellerInfo: AdapterSellerInfo
     private lateinit var searchMobile: EditText
+    private lateinit var bankDetails:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seller_info)
         recyclerInfoSeller = findViewById(R.id.recycler_seller_info)
         searchMobile = findViewById(R.id.searchPhone)
+        bankDetails=findViewById(R.id.bankDetails)
         recyclerInfoSeller.layoutManager = LinearLayoutManager(this)
         sellerInfoList = ArrayList<ModalSellerInfo>()
+        bankDetails.setOnClickListener {
+            startActivity(Intent(this,BankDetails::class.java))
+            finish()
+        }
+
         searchMobile.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
 
